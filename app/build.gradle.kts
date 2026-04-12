@@ -8,14 +8,18 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.localaichat"
-        minSdk = 35
+        applicationId = "com.leehj825.localaichat"
+        minSdk = 34
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         vectorDrawables {
             useSupportLibrary = true
+        }
+
+        ndk {
+            abiFilters.add("arm64-v8a")
         }
     }
 
