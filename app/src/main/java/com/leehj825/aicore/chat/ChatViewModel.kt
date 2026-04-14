@@ -1,4 +1,4 @@
-package com.example.localaichat
+package com.leehj825.aicore.chat
 
 import android.content.Context
 import androidx.lifecycle.ViewModel

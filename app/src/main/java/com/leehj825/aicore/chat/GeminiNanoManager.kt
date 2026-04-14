@@ -1,4 +1,4 @@
-package com.example.localaichat
+package com.leehj825.aicore.chat
 
 import android.content.Context
 import android.util.Log
@@ -14,13 +14,13 @@ class GeminiNanoManager(context: Context) {
     private val downloadConfig = DownloadConfig(
         object : DownloadCallback {
             override fun onDownloadStarted(bytesToDownload: Long) {
-                Log.d(TAG, "Download started: \$bytesToDownload bytes")
+                Log.d(TAG, "Download started: $bytesToDownload bytes")
             }
             override fun onDownloadFailed(failureStatus: String, e: GenerativeAIException) {
-                Log.e(TAG, "Download failed: \$failureStatus", e)
+                Log.e(TAG, "Download failed: $failureStatus", e)
             }
             override fun onDownloadProgress(totalBytesDownloaded: Long) {
-                Log.d(TAG, "Download progress: \$totalBytesDownloaded bytes")
+                Log.d(TAG, "Download progress: $totalBytesDownloaded bytes")
             }
             override fun onDownloadCompleted() {
                 Log.d(TAG, "Download completed")
@@ -42,7 +42,7 @@ class GeminiNanoManager(context: Context) {
             model.prepareInferenceEngine()
             true
         } catch (e: Exception) {
-            Log.e(TAG, "Model not ready: \${e.message}", e)
+            Log.e(TAG, "Model not ready: ${e.message}", e)
             false
         }
     }
@@ -52,14 +52,14 @@ class GeminiNanoManager(context: Context) {
             val response = model.generateContent(prompt)
             response.text ?: "No response generated."
         } catch (e: Exception) {
-            Log.e(TAG, "Error generating content: \${e.message}", e)
+            Log.e(TAG, "Error generating content: ${e.message}", e)
             val errorMessage = e.message ?: ""
             if (errorMessage.contains("BUSY")) {
                 "Error: Model is busy. Please try again later."
             } else if (errorMessage.contains("NOT_FOUND")) {
                 "Error: Model not found. Ensure AICore is updated."
             } else {
-                "Error: \${e.localizedMessage}"
+                "Error: ${e.localizedMessage}"
             }
         }
     }

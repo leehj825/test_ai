@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.localaichat"
+    namespace = "com.leehj825.aicore.chat"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.leehj825.localaichat"
-        minSdk = 34
+        applicationId = "com.leehj825.aicore.chat"
+        minSdk = 33
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
