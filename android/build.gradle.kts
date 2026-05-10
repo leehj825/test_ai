@@ -2,6 +2,9 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url = uri("https://maven.google.com")
+        }
     }
 }
 
@@ -17,14 +20,6 @@ subprojects {
 }
 subprojects {
     project.evaluationDependsOn(":app")
-}
-
-allprojects {
-    configurations.all {
-        resolutionStrategy.dependencySubstitution {
-            substitute(module("com.google.android.ai.edge:generativeai:0.1.0")).using(module("com.google.ai.edge.aicore:aicore:0.0.1-exp02"))
-        }
-    }
 }
 
 tasks.register<Delete>("clean") {

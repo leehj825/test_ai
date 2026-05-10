@@ -39,6 +39,12 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        force("com.google.android.ai.edge:generativeai:0.1.0")
+    }
+}
+
 flutter {
     source = "../.."
 }
