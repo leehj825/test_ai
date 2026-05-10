@@ -114,8 +114,6 @@ app.*.map.json
 **/linux/**/bundle/
 # Web related
 **/web/
-# Android
-**/android/
 # iOS
 **/ios/
 # Linux
