@@ -23,6 +23,14 @@ subprojects {
 }
 
 subprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://maven.google.com") }
+    }
+}
+
+subprojects {
     project.configurations.all {
         resolutionStrategy.eachDependency {
             if (requested.group == "com.google.android.ai.edge") {
