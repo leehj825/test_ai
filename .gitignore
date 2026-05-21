@@ -122,3 +122,10 @@ app.*.map.json
 **/macos/
 # Windows
 **/windows/
+# Mock repo and artifacts
+/mock_aar/
+/kotlinc/
+/android.jar
+/kotlinx-coroutines-core.jar
+/*.zip
+/make_aar.sh

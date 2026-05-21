@@ -28,6 +28,9 @@ dependencyResolutionManagement {
         maven {
             url = uri("https://maven.google.com")
         }
+        maven {
+            url = uri("${settingsDir}/local_repo")
+        }
     }
 }
 

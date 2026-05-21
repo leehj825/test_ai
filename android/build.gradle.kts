@@ -5,6 +5,9 @@ allprojects {
         maven {
             url = uri("https://maven.google.com")
         }
+        maven {
+            url = uri("${rootProject.projectDir}/local_repo")
+        }
     }
 }
 
@@ -20,14 +23,6 @@ subprojects {
 }
 subprojects {
     project.evaluationDependsOn(":app")
-}
-
-subprojects {
-    repositories {
-        google()
-        mavenCentral()
-        maven { url = uri("https://maven.google.com") }
-    }
 }
 
 subprojects {
