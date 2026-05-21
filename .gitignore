@@ -1,0 +1,131 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains configureation for the Visual Studio Code
+# editor. If you are working in a team or on a public repository,
+# this is a good place to ignore.
+.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+
+# Web related
+lib/generated_plugin_registrant.dart
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will automatically add this build folder
+/android/app/build/
+
+# Android related
+**/android/**/gradle-wrapper.jar
+**/android/.gradle
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
+
+# iOS/macOS related
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/*sync/
+**/ios/**/.generated/
+**/ios/**/AppIcon.appiconset/
+**/ios/**/Assets.car
+**/ios/**/DerivedData/
+**/ios/**/Icon-App*.png
+**/ios/**/LaunchImage.imageset/
+**/ios/**/Pods/
+**/ios/**/Runner.app/
+**/ios/**/Runner.xcworkspace/
+**/ios/**/Tests.octest/
+**/ios/**/UserInterfaceState.xcuserstate
+**/ios/**/build/
+**/ios/**/xcuserdata/
+**/ios/.symlinks/
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# Exceptions to above rules.
+!**/ios/**/default.pbxuser
+!**/ios/**/default.perspectivev3
+!**/ios/**/xcshareddata/
+!**/ios/Runner.xcworkspace/contents.xcworkspacedata
+
+# Windows related
+**/windows/**/*.aps
+**/windows/**/*.cache
+**/windows/**/*.db
+**/windows/**/*.dir/
+**/windows/**/*.exe
+**/windows/**/*.exp
+**/windows/**/*.ilk
+**/windows/**/*.lib
+**/windows/**/*.log
+**/windows/**/*.obj
+**/windows/**/*.pdb
+**/windows/**/*.res
+**/windows/**/*.sln
+**/windows/**/*.suo
+**/windows/**/*.tlog
+**/windows/**/Debug/
+**/windows/**/Release/
+**/windows/**/x64/
+**/windows/flutter/ephemeral/
+
+# Linux related
+**/linux/**/build/
+**/linux/**/bundle/
+# Web related
+**/web/
+# iOS
+**/ios/
+# Linux
+**/linux/
+# Macos
+**/macos/
+# Windows
+**/windows/
+# Mock repo and artifacts
+/mock_aar/
+/kotlinc/
+/android.jar
+/kotlinx-coroutines-core.jar
+/*.zip
+/make_aar.sh
