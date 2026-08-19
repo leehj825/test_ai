@@ -1,0 +1,48 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { POV_THEME } from '../../lib/pov';
+
+export async function getStaticPaths() {
+  const published = (await getCollection('chapters', ({ data }) => data.status === 'published')).sort(
+    (a, b) => a.data.chapter - b.data.chapter
+  );
+
+  return published.map((chapter, index) => ({
+    params: { id: chapter.id },
+    props: {
+      chapter,
+      prev: published[index - 1] ?? null,
+      next: published[index + 1] ?? null,
+    },
+  }));
+}
+
+const { chapter, prev, next } = Astro.props;
+const { Content } = await render(chapter);
+const theme = POV_THEME[chapter.data.pov];
+---
+
+<BaseLayout title={`${chapter.data.title} — The Novel`} accent={theme.accent} accentSoft={theme.accentSoft}>
+  <div class="chapter-header">
+    <div class="wrap">
+      <div class="meta">
+        Chapter {chapter.data.chapter} &middot; {theme.label}'s POV &middot; {chapter.data.timeline}
+      </div>
+      <h1>{chapter.data.title}</h1>
+    </div>
+  </div>
+  <main class="wrap">
+    <article class="chapter-body">
+      <Content />
+    </article>
+    <nav class="chapter-nav">
+      {prev ? (
+        <a class="prev" href={`/chapters/${prev.id}/`}>&larr; {prev.data.title}</a>
+      ) : <span />}
+      {next ? (
+        <a class="next" href={`/chapters/${next.id}/`}>{next.data.title} &rarr;</a>
+      ) : <span />}
+    </nav>
+  </main>
+</BaseLayout>

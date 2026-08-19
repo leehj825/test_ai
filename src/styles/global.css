@@ -1,0 +1,139 @@
+:root {
+  --accent: #3b82f6;
+  --accent-soft: #eff6ff;
+  --ink: #1b1a17;
+  --paper: #fdfcfa;
+  --muted: #6b6560;
+  --border: #e6e1d8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, 'Times New Roman', serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 1rem;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.site-header a {
+  color: var(--ink);
+}
+
+.wrap {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.chapter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chapter-list li {
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.chapter-list .meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.chapter-list .title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.pov-badge {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+}
+
+.chapter-header {
+  background: linear-gradient(to bottom, var(--accent-soft), transparent);
+  border-bottom: 3px solid var(--accent);
+  padding: 2rem 1rem;
+}
+
+.chapter-header .wrap {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.chapter-header .meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.chapter-header h1 {
+  margin: 0.2rem 0 0.5rem;
+}
+
+.chapter-body {
+  font-size: 1.08rem;
+}
+
+.chapter-body h2,
+.chapter-body h3 {
+  color: var(--ink);
+}
+
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.chapter-nav a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.chapter-nav .next {
+  text-align: right;
+  margin-left: auto;
+}

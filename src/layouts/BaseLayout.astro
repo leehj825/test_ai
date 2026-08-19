@@ -1,0 +1,29 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  accent?: string;
+  accentSoft?: string;
+}
+
+const { title, accent, accentSoft } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    {accent && accentSoft && (
+      <style set:html={`:root { --accent: ${accent}; --accent-soft: ${accentSoft}; }`} />
+    )}
+  </head>
+  <body>
+    <header class="site-header">
+      <h1><a href="/">The Novel</a></h1>
+    </header>
+    <slot />
+  </body>
+</html>

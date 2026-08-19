@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { POV_THEME } from '../lib/pov';
+
+const chapters = (await getCollection('chapters', ({ data }) => data.status === 'published')).sort(
+  (a, b) => a.data.chapter - b.data.chapter
+);
+---
+
+<BaseLayout title="The Novel">
+  <main class="wrap">
+    <p>A story told across five points of view.</p>
+    <ul class="chapter-list">
+      {
+        chapters.map((chapter) => {
+          const theme = POV_THEME[chapter.data.pov];
+          return (
+            <li>
+              <div class="meta">
+                Chapter {chapter.data.chapter} &middot; {chapter.data.timeline}
+              </div>
+              <div class="title">
+                <a href={`/chapters/${chapter.id}/`}>{chapter.data.title}</a>
+              </div>
+              <span class="pov-badge" style={`--accent: ${theme.accent}; --accent-soft: ${theme.accentSoft};`}>
+                {theme.label}
+              </span>
+            </li>
+          );
+        })
+      }
+    </ul>
+    {chapters.length === 0 && <p>No chapters published yet.</p>}
+  </main>
+</BaseLayout>
